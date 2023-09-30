@@ -1,0 +1,857 @@
+@import "../components/variables";
+
+// start hero_section
+.hero_section {
+  height: calc(100vh - 68px);
+  position: relative;
+
+  .container {
+    height: 100%;
+  }
+
+  .line {
+    height: 100%;
+    align-items: center;
+
+    .text {
+      .title {
+        font-size: 65px;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+
+      .btn_fill {
+        background-color: white;
+        color: black !important;
+      }
+    }
+
+    .image {
+      text-align: center;
+
+      .img_banner {
+        img {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_section {
+    height: 80vh;
+
+    .line {
+      justify-content: center;
+
+      .text {
+        text-align: center;
+
+        .title {
+          font-size: 30px;
+          margin-bottom: 8px;
+        }
+
+        .btn_fill {
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+// end hero_section
+
+// start about_us_section
+.about_us_section {
+  padding: 80px 0 0;
+  background-color: #f2af0e;
+  color: black;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .main_info {
+      .title {
+        font-size: 45px;
+        font-weight: 500;
+        max-width: 400px;
+      }
+
+      .btn_fill {
+        padding: 9px 25px;
+        border-radius: 50px;
+      }
+    }
+
+    .info {
+      .desc {
+        max-width: 500px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .boxs_images {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_us_section {
+    padding: 50px 0 0;
+
+    .head {
+      text-align: center;
+      flex-direction: column;
+      gap: 10px;
+
+      .main_info {
+        .title {
+          font-size: 30px;
+        }
+
+        .btn_fill {
+          padding: 4px 15px;
+          margin: auto;
+        }
+      }
+
+      .info {
+        .desc {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .boxs_images {
+      margin-top: 40px;
+    }
+
+    .owl-nav,
+    .owl-dots {
+      display: none;
+    }
+  }
+}
+// end about_us_section
+
+// start how_it_works
+.how_it_works {
+  padding: 80px 0;
+  background-color: #f2af0e;
+  color: black;
+
+  .line {
+    .text {
+      .title {
+        font-size: 40px;
+        font-weight: 600;
+      }
+
+      .desc {
+        max-width: 500px;
+        margin-bottom: 0;
+      }
+
+      .image {
+        img {
+          width: 40%;
+        }
+      }
+    }
+
+    .boxs_text {
+      .box {
+        &:not(:last-child) {
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          border-bottom: 2px solid #ba860b;
+        }
+
+        .title {
+          font-size: 28px;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+
+        .desc_box {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .how_it_works {
+    padding: 40px 0;
+
+    .line {
+      text-align: center;
+      gap: 20px;
+
+      .text {
+        .title {
+          font-size: 34px;
+        }
+
+        .desc {
+          font-size: 14px;
+        }
+      }
+
+      .boxs_text {
+        .box {
+          &:not(:last-child) {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ba860b;
+          }
+
+          .title {
+            font-size: 23px;
+            margin-bottom: 4px;
+          }
+
+          .desc_box {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+// end how_it_works
+
+// start what_our_clients_say
+.what_our_clients_say {
+  padding: 70px 0;
+  color: black;
+  position: relative;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    margin-bottom: 40px;
+
+    .text {
+      flex: 1;
+      display: flex;
+      justify-content: end;
+
+      .title {
+        font-size: 100px;
+        line-height: 1;
+      }
+    }
+
+    .icon {
+      width: 200px;
+      height: 220px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      &.icon1 {
+        transform: translateX(-70px);
+      }
+
+      &.icon2 {
+        transform: translateX(100px);
+        justify-content: start;
+        align-items: end;
+
+        span {
+          color: #ff3eb3;
+          transform: rotate(180deg);
+        }
+      }
+
+      span {
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 190px;
+      }
+    }
+  }
+
+  .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 35px;
+
+    .box {
+      padding: 20px 30px;
+      border: 1px solid black;
+
+      .comment {
+        font-size: 16px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid black;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          font-size: 19px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .what_our_clients_say {
+    padding: 40px 0;
+
+    .head {
+      gap: 0;
+      margin-bottom: 100px;
+      .icon {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        justify-content: end;
+
+        span {
+          font-size: 136px;
+        }
+
+        &.icon1 {
+          top: 0;
+          left: -35px;
+        }
+
+        &.icon2 {
+          justify-content: start;
+          align-items: center;
+          top: 0;
+          right: -20px;
+        }
+      }
+
+      .text {
+        justify-content: center;
+
+        .title {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .boxs {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+
+      .box {
+        padding: 10px 20px;
+
+        .comment {
+          font-size: 14px;
+          padding-bottom: 7px;
+          margin-bottom: 10px;
+        }
+
+        .profile {
+          gap: 6px;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+// end what_our_clients_say
+
+// start meal_plans
+.meal_plans {
+  padding: 80px 0;
+
+  .head {
+    text-align: center;
+
+    .title {
+      font-size: 35px;
+      font-weight: 600;
+    }
+  }
+
+  .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 70px auto 0;
+
+    .box {
+      padding: 17px;
+      border: 1px solid #80cbba;
+      border-radius: 7px;
+      position: relative;
+
+      &:nth-child(2) {
+        border: 1px solid #fa8c9b;
+      }
+
+      &:nth-child(3) {
+        border: 1px solid #d0ceed;
+      }
+
+      &:nth-child(4) {
+        border: 1px solid #fcd36c;
+      }
+
+      .icon {
+        background-color: #f13750;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+
+        i {
+          font-size: 14px;
+        }
+      }
+
+      .image {
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+          width: 150px;
+        }
+      }
+
+      .features {
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+
+          i {
+            font-size: 7px;
+            margin-top: 5px;
+            color: $primary-color;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .meal_plans {
+    padding: 40px 0;
+
+    .head {
+      .title {
+        font-size: 22px;
+      }
+
+      .desc {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+    }
+
+    .boxs {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      margin: 40px auto 0;
+
+      .box {
+        text-align: center;
+
+        .features {
+          .feature {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// end meals plans
+
+// start dietitions_section
+.dietitions_section {
+  padding: 70px 0;
+
+  .line {
+    .text {
+      .title {
+        font-size: 55px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+
+      .desc {
+        font-size: 19px;
+        margin-bottom: 25px;
+
+        &.italic {
+          font-style: italic;
+        }
+      }
+    }
+
+    .image {
+      text-align: center;
+      img {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dietitions_section {
+    padding: 40px 0;
+
+    .line {
+      .text {
+        text-align: center;
+
+        .title {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+
+        .desc {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+
+        .dietition {
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+// end dietitions_section
+
+// start menu_grams_section
+.menu_grams_section {
+  padding: 70px 0;
+  background-color: #f8f4ed;
+
+  .head {
+    text-align: center;
+
+    .desc {
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+
+  .menu_boxs {
+    margin-top: 70px;
+    padding-left: 30px;
+
+    .owl-item {
+      &:nth-child(1) {
+        padding-left: 30px;
+      }
+    }
+
+    .box {
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0px 3px 10px #dedede;
+
+      .image {
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+
+      .text {
+        padding: 20px;
+        text-align: center;
+
+        h4 {
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .owl-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+
+      button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $primary-color !important;
+        color: white !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu_grams_section {
+    padding: 40px 0;
+
+    .head {
+      .desc {
+        font-size: 15px;
+      }
+    }
+
+    .menu_boxs {
+      margin-top: 35px;
+      padding-left: 0;
+      padding: 0 15px;
+    }
+  }
+}
+// end menu_grams_section
+
+// start app_features
+.app_features {
+  padding: 80px 0;
+
+  .line {
+    align-items: center;
+
+    .text {
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .features {
+        .feature {
+          padding: 12px;
+          background-color: #f8f4ed;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          border-radius: 10px;
+          box-shadow: 0px 3px 10px #e9e9e9;
+
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+
+          .icon {
+            width: 70px;
+            min-width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+
+            img {
+              width: 55px;
+            }
+          }
+
+          h5 {
+            margin-bottom: 0px;
+            font-size: 20px;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .image {
+      text-align: center;
+
+      img {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app_features {
+    padding: 40px 0;
+
+    .line {
+      .text {
+        text-align: center;
+        .title {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+
+        .desc {
+          font-size: 14px;
+        }
+
+        .features {
+          .feature {
+            text-align: start;
+            .icon {
+              width: 60px;
+              min-width: 60px;
+              height: 60px;
+            }
+
+            h5 {
+              font-size: 18px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// end app_features
+
+// start faq_section
+.faq_section {
+  padding: 60px 0;
+  background-color: $primary-color;
+  color: white;
+
+  .subtitle {
+    font-size: 20px;
+    color: bla;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .line {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .accordion {
+      .accordion-item {
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        .accordion-button {
+          border: none;
+          border-radius: 7px;
+          font-weight: 600;
+
+          &:not(.collapsed) {
+            background-color: $primary-color !important;
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .faq_section {
+    padding: 30px 0;
+
+    .subtitle {
+      font-size: 15px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .line {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+
+      .left,
+      .right {
+        width: 100%;
+      }
+
+      .accordion {
+        .accordion-item {
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+          .accordion-button {
+            font-size: 14px;
+            padding: 10px;
+          }
+
+          .accordion-body {
+            padding: 8px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+// end faq_section
