@@ -30,8 +30,47 @@
       text-align: center;
 
       .img_banner {
-        img {
-          width: 45%;
+        position: relative;
+        > img {
+          width: 95%;
+        }
+
+        .boxs_download {
+          position: absolute;
+          bottom: 45px;
+
+          .box_download {
+            padding: 7px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: white;
+            border-radius: 6px;
+            width: 200px;
+            color: black;
+
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+
+            .icon {
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+
+            span {
+              display: block;
+              font-size: 15px;
+            }
+
+            h6 {
+              margin-bottom: 0;
+              font-size: 17px;
+              font-weight: 600;
+            }
+          }
         }
       }
     }
@@ -55,6 +94,37 @@
 
         .btn_fill {
           margin: auto;
+        }
+      }
+
+      .image {
+        .img_banner {
+          .boxs_download {
+            .box_download {
+              padding: 5px;
+              gap: 5px;
+              width: fit-content;
+
+              &:not(:last-child) {
+                margin-bottom: 9px;
+              }
+
+              .icon {
+                img {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+
+              span {
+                font-size: 12px;
+              }
+
+              h6 {
+                font-size: 16px;
+              }
+            }
+          }
         }
       }
     }
@@ -96,6 +166,21 @@
 
   .boxs_images {
     margin-top: 80px;
+
+    .box {
+      height: 435px;
+
+      .image {
+        height: 100%;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
 
@@ -129,6 +214,10 @@
 
     .boxs_images {
       margin-top: 40px;
+
+      .box {
+        height: 380px;
+      }
     }
 
     .owl-nav,
@@ -144,28 +233,34 @@
   padding: 80px 0;
   background-color: #f2af0e;
   color: black;
+  position: relative;
 
   .line {
     .text {
       .title {
-        font-size: 40px;
-        font-weight: 600;
+        font-size: 75px;
+        font-weight: 400;
+        line-height: 1;
       }
 
       .desc {
         max-width: 500px;
-        margin-bottom: 0;
+        margin-bottom: 15px;
       }
+    }
 
-      .image {
-        img {
-          width: 40%;
-        }
+    .image {
+      position: relative;
+      z-index: 99;
+      img {
+        width: 50%;
       }
     }
 
     .boxs_text {
       .box {
+        max-width: 500px;
+
         &:not(:last-child) {
           padding-bottom: 15px;
           margin-bottom: 15px;
@@ -180,8 +275,19 @@
 
         .desc_box {
           margin-bottom: 0;
+          max-width: 400px;
         }
       }
+    }
+  }
+
+  .icon_grams {
+    position: absolute;
+    bottom: -10px;
+    right: -33px;
+
+    img {
+      width: 275px;
     }
   }
 }
@@ -192,19 +298,29 @@
 
     .line {
       text-align: center;
-      gap: 20px;
+      gap: 13px;
 
       .text {
         .title {
-          font-size: 34px;
+          font-size: 45px;
         }
 
         .desc {
           font-size: 14px;
+          margin-bottom: 0;
+        }
+      }
+
+      .image {
+        img {
+          width: 65%;
         }
       }
 
       .boxs_text {
+        text-align: start;
+        max-width: 275px;
+        margin: auto;
         .box {
           &:not(:last-child) {
             padding-bottom: 10px;
@@ -223,13 +339,22 @@
         }
       }
     }
+
+    .icon_grams {
+      bottom: -15px;
+      right: -29px;
+
+      img {
+        width: 170px;
+      }
+    }
   }
 }
 // end how_it_works
 
 // start what_our_clients_say
 .what_our_clients_say {
-  padding: 70px 0;
+  padding: 0 0 70px;
   color: black;
   position: relative;
 
@@ -249,11 +374,16 @@
       .title {
         font-size: 100px;
         line-height: 1;
+
+        img {
+          width: 68px;
+          margin-top: -37px;
+        }
       }
     }
 
     .icon {
-      width: 200px;
+      width: 230px;
       height: 220px;
       background-color: black;
       display: flex;
@@ -267,18 +397,19 @@
       &.icon2 {
         transform: translateX(100px);
         justify-content: start;
-        align-items: end;
+        align-items: center;
 
         span {
           color: #ff3eb3;
-          transform: rotate(180deg);
+          transform: rotate(180deg) translateY(20px);
         }
       }
 
       span {
         color: $primary-color;
         font-weight: 600;
-        font-size: 190px;
+
+        font-size: 240px;
       }
     }
   }
@@ -321,31 +452,36 @@
 
 @media (max-width: 768px) {
   .what_our_clients_say {
-    padding: 40px 0;
+    padding: 0 40px 0;
 
     .head {
-      gap: 0;
-      margin-bottom: 100px;
+      padding-top: 60px;
+      margin-bottom: 35px;
+
       .icon {
         position: absolute;
         width: 140px;
         height: 140px;
         justify-content: end;
+        background-color: transparent;
 
         span {
           font-size: 136px;
         }
 
         &.icon1 {
-          top: 0;
-          left: -35px;
+          display: flex;
+          justify-content: end;
+          align-items: end;
+          top: 4px;
+          left: -67px;
         }
 
         &.icon2 {
           justify-content: start;
           align-items: center;
           top: 0;
-          right: -20px;
+          right: -37px;
         }
       }
 
@@ -353,7 +489,12 @@
         justify-content: center;
 
         .title {
-          font-size: 30px;
+          font-size: 45px;
+
+          img {
+            width: 35px;
+            margin-top: -30px;
+          }
         }
       }
     }
@@ -403,12 +544,15 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
     margin: 70px auto 0;
+    max-width: 1100px;
+    align-items: end;
 
     .box {
       padding: 17px;
       border: 1px solid #80cbba;
       border-radius: 7px;
       position: relative;
+      height: fit-content;
 
       &:nth-child(2) {
         border: 1px solid #fa8c9b;
@@ -447,19 +591,25 @@
         }
       }
 
+      .title {
+        text-align: center;
+        font-size: 22px;
+      }
+
+      .warning {
+        text-align: center;
+        font-size: 14px;
+      }
+
       .features {
         .feature {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-
           &:not(:last-child) {
             margin-bottom: 10px;
           }
 
           i {
             font-size: 7px;
-            margin-top: 5px;
+            margin-left: 7px;
             color: $primary-color;
           }
 
@@ -478,11 +628,11 @@
 
     .head {
       .title {
-        font-size: 22px;
+        font-size: 35px;
       }
 
       .desc {
-        font-size: 13px;
+        font-size: 12px;
         margin-bottom: 0;
       }
     }
@@ -508,7 +658,7 @@
 
 // start dietitions_section
 .dietitions_section {
-  padding: 70px 0;
+  padding: 70px 0 0;
 
   .line {
     .text {
@@ -531,7 +681,7 @@
     .image {
       text-align: center;
       img {
-        width: 60%;
+        width: 100%;
       }
     }
   }
@@ -539,7 +689,7 @@
 
 @media (max-width: 768px) {
   .dietitions_section {
-    padding: 40px 0;
+    padding: 40px 0 0;
 
     .line {
       .text {
@@ -573,6 +723,14 @@
   .head {
     text-align: center;
 
+    .icon {
+      text-align: center;
+
+      img {
+        width: 150px;
+      }
+    }
+
     .desc {
       margin-bottom: 0;
       font-weight: 600;
@@ -583,12 +741,9 @@
   .menu_boxs {
     margin-top: 70px;
     padding-left: 30px;
-
-    .owl-item {
-      &:nth-child(1) {
-        padding-left: 30px;
-      }
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 
     .box {
       border-radius: 10px;
@@ -599,7 +754,7 @@
       .image {
         img {
           width: 100%;
-          height: 200px;
+          height: 260px;
           object-fit: cover;
         }
       }
@@ -614,25 +769,6 @@
         }
       }
     }
-
-    .owl-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-
-      button {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: $primary-color !important;
-        color: white !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
 }
 
@@ -641,6 +777,12 @@
     padding: 40px 0;
 
     .head {
+      .icon {
+        img {
+          width: 100px;
+        }
+      }
+
       .desc {
         font-size: 15px;
       }
@@ -650,6 +792,24 @@
       margin-top: 35px;
       padding-left: 0;
       padding: 0 15px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+
+      .box {
+        .image {
+          img {
+            height: 200px;
+          }
+        }
+
+        .text {
+          padding: 8px;
+
+          h4 {
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }
@@ -658,6 +818,7 @@
 // start app_features
 .app_features {
   padding: 80px 0;
+  position: relative;
 
   .line {
     align-items: center;
@@ -711,10 +872,22 @@
     }
 
     .image {
-      text-align: center;
+      position: relative;
 
-      img {
+      > img {
         width: 45%;
+      }
+
+      .bg_features {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -230px;
+        z-index: -1;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
@@ -724,13 +897,14 @@
   .app_features {
     padding: 40px 0;
 
+    .title {
+      font-size: 34px;
+      margin-bottom: 5px;
+    }
+
     .line {
       .text {
         text-align: center;
-        .title {
-          font-size: 24px;
-          margin-bottom: 5px;
-        }
 
         .desc {
           font-size: 14px;
@@ -755,6 +929,14 @@
           }
         }
       }
+
+      .image {
+        .bg_features {
+          height: 145%;
+          width: 100%;
+          right: -30px;
+        }
+      }
     }
   }
 }
@@ -766,11 +948,11 @@
   background-color: $primary-color;
   color: white;
 
-  .subtitle {
+  .link {
+    text-align: end;
+    transform: translateY(-80px);
     font-size: 20px;
-    color: bla;
-    font-weight: 500;
-    text-align: center;
+    text-decoration: underline;
   }
 
   .title {
@@ -817,6 +999,11 @@
   .faq_section {
     padding: 30px 0;
 
+    .link {
+      transform: translateY(0);
+      font-size: 17px;
+    }
+
     .subtitle {
       font-size: 15px;
     }
@@ -855,3 +1042,32 @@
   }
 }
 // end faq_section
+
+// start gallery_section
+.gallery_section {
+  .boxs_images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .box {
+      height: 450px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery_section {
+    .boxs_images {
+      .box {
+        height: 350px;
+      }
+    }
+  }
+}
+// end gallery_section
